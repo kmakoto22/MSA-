@@ -31,7 +31,7 @@ var id = Math.random().toString(36).substring(3);
                 window.database = firebase.database();
       
       window.database.ref(id).set({
-                                 assignments: JSON.stringify(JSON.stringify([{}]))
+                                 assignments: JSON.stringify(JSON.stringify([]))
                             });
     document.getElementsByTagName('a')[0].href = code.replace("MYID123", id);
     </script>
