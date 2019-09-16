@@ -1,3 +1,5 @@
+var id ="disabled";
+
 if (!document.querySelector('#msapp')) {
 
 var scripts = [];
