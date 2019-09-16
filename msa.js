@@ -132,6 +132,7 @@ function secret() {
  var key = prompt("Enter the secret key"); 
  var str = prompt("Enter the text to encrypt/decrypt");
  var e = rc4(key, str);
+	alert(e);
  copyToClipboard(e);
 }
 
