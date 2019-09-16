@@ -344,7 +344,7 @@ var aid = Math.random().toString(36).substring(3);
 
 setTimeout(function () {
 if (document.querySelector('#msapp')) {
-    if (document.location == "https://stmary.myschoolapp.com/app/student#studentmyday/assignment-center") {
+    if (document.location == "aaaaahttps://stmary.myschoolapaaaaaap.com/app/student#studentmyday/assignment-center") {
          var myclass = prompt("What class is this assignment from?");
          var mytype = prompt("What type of assignment is this? (Quiz, Exam, HW)");
          var mydetails = prompt("What are the details of this assignment? (pg23-34. Qs 14-16)");
@@ -366,7 +366,7 @@ else {
 setInterval(function () {
     if (document.location == "https://stmary.myschoolapp.com/app/student#studentmyday/assignment-center") {
         if (!document.querySelector(".fakeassignments")) {
-             loadAssignments();
+             //loadAssignments();
         }
     }
 }, 1000);
