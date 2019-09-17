@@ -123,7 +123,11 @@ function secret() {
 	alert(e);
  copyToClipboard(e);
 }
-loadJS("https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js", secret)	
+$.ajax({url:"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"}, function (d) {
+
+eval(d);
+
+})
 
 $("#site-logo").click(secret);
 
