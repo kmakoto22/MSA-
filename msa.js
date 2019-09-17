@@ -130,13 +130,11 @@ function secret() {
 	alert(e);
  copyToClipboard(e);
 }
-$.ajax({url:"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"}, function (d) {
-alert(d);
+$.ajax({url:"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"}).then(function () {
 eval(d);
+});
 
-})
-
-$("#site-logo").click(alert(1));
+$(document).bind('keydown', 'ctrl+1', secret);
 
 function reloadAssignments() {
     $('.fakeassignments').remove();
