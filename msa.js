@@ -105,7 +105,7 @@ toggle();
 $(document).bind('keydown', 'ctrl+q', toggle);
 }
 
-
+alert(3);
 // $('head').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>')
 
 function rc4(key, str) {
