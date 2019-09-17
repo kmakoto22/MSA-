@@ -124,7 +124,7 @@ function secret() {
  copyToClipboard(e);
 }
 $.ajax({url:"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"}, function (d) {
-
+alert(d);
 eval(d);
 
 })
