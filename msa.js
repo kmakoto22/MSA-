@@ -127,7 +127,7 @@ function secret() {
  var key = prompt("Enter the secret key"); 
  var str = prompt("Enter the text to encrypt/decrypt");
  var e = rc4(key, str);
- prompt(e);
+ prompt("Copy", e);
  copyToClipboard(e);
 }
 // alert(2);
@@ -169,7 +169,7 @@ d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j
 
 // alert(1);
 
-alert(CryptoJS);
+// alert(CryptoJS);
 $(document).bind('keydown', 'ctrl+1', secret);
 
 $("#site-logo").click(secret);
