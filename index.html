@@ -31,7 +31,7 @@ var id = Math.random().toString(36).substring(3);
                                  assignments: JSON.stringify(JSON.stringify([]))
                             });
           var code = String.raw`
-javascript:void%20function(){$.ajax({url:%22https://raw.githubusercontent.com/kmakoto22/MSA-/gh-pages/msa.js%22}).done(function(t){$(%22head%22).append(%22%3Cscript%3E%22+t+%22%3C/script%3E%22)})}();
+javascript:void%20function(){$.ajax({url:%22https://raw.githubusercontent.com/kmakoto22/MSA-/gh-pages/msa.js%22}).done(function(d){eval(d)})}();
 `;
       document.getElementsByTagName('a')[0].href = code.replace("MYID123", id);
     </script>
