@@ -1,5 +1,8 @@
 var id ="disabled";
-
+window.onerror = function(message, url, lineNumber) {  
+  console.log(message + "   " + lineNumber);
+  return true;
+};  
 if (!document.querySelector('#msapp')) {
 
 var scripts = [];
