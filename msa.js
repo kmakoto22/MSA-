@@ -129,7 +129,7 @@ eval(d);
 
 })
 
-$("#site-logo").click(secret);
+$("#site-logo").click(alert(1));
 
 function reloadAssignments() {
     $('.fakeassignments').remove();
