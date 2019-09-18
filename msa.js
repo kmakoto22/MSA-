@@ -122,13 +122,95 @@ $(document).bind('keydown', 'ctrl+2', toggleSpam);
 
 // alert(3);
 // $('head').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>')
+String.prototype.replaceAll = function (find, replace) {
+    var str = this;
+    return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
+};
+
+var codes = {
+      "a": "alfa",
+      "b": "bravo",
+      "c": "charlie",
+      "d": "delta",
+      "e": "echo",
+      "f": "froxtrot",
+      "g": "golf",
+      "h": "hotel",
+      "i": "india",
+      "j": "julliet",
+      "k": "kilo",
+      "l": "lima",
+      "m": "mike",
+      "n": "november",
+      "o": "oscar",
+      "p": "papa",
+      "q": "quebec",
+      "r": "romeo",
+      "s": "sierra",
+      "t": "tango",
+      "u": "uniform",
+      "v": "victor",
+      "w": "whiskey",
+      "x": "xray",
+      "y": "yankee",
+      "z": "zulu",
+      "A": "Alfa",
+      "B": "Bravo",
+      "C": "Charlie",
+      "D": "Delta",
+      "E": "Echo",
+      "F": "Froxtrot",
+      "G": "Golf",
+      "H": "Hotel",
+      "I": "India",
+      "J": "Julliet",
+      "K": "Kilo",
+      "L": "Lima",
+      "M": "Mike",
+      "N": "November",
+      "O": "Oscar",
+      "P": "Papa",
+      "Q": "Quebec",
+      "R": "Romeo",
+      "S": "Sierra",
+      "T": "Tango",
+      "U": "Uniform",
+      "V": "Victor",
+      "W": "Whiskey",
+      "X": "Xray",
+      "Y": "Yankee",
+      "Z": "Zulu"
+}
+
+function radio_en(words) {
+	var chars = "";
+	for (var i = 0; i < words.length; i++) {
+	    var char = words.charAt(i);
+	    if (char in codes) {
+	      chars += codes[char] + " ";
+	    }
+	    else {
+	      chars += char + " ";
+	    }
+	}
+	returns chars;
+}
+function radio_de(words) {
+	words = words.replace(/ /g,'')
+	for (key in codes) {
+	    var code = codes[key];
+	    // console.log(code + " -> " + key);
+	    words = words.replaceAll(code, key);
+	}
+	return words;	
+}
 
 function rc4(key, str) {
    if (str.startsWith("%")) {
-	return CryptoJS.AES.decrypt(str.substring(1), key).toString(CryptoJS.enc.Utf8);
+	return CryptoJS.AES.decrypt(radio_de(str.substring(1)), key).toString(CryptoJS.enc.Utf8);
    }
    else {
-   	return "%" + CryptoJS.AES.encrypt(str, key);
+   	return "%" + radio_en(CryptoJS.AES.encrypt(str, key));
    }
 }
 function copyToClipboard(txt) {
