@@ -103,7 +103,7 @@ function toggleSpam() {
    if (!spamming) {
    	spamInterval = setInterval(function () {
 		toggle();
-	}, 250)
+	}, 25)
 	spamming = true;
    }
    else {
