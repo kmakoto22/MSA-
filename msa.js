@@ -97,12 +97,27 @@ function toggle() {
        blackmode = false;
    }
 }
+var spamming = false;
+var spamInterval;
+function toggleSpam() {
+   if (!spamming) {
+   	spamInterval = setInterval(function () {
+		toggle();
+	}, 250)
+	spamming = true;
+   }
+   else {
+	clearInterval(spamInterval);
+	spamming = false;
+   }
+}
 if (document.domain != "stmary.myschoolapp.com") {
 (function() {     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');     link.type = 'image/x-icon';     link.rel = 'shortcut icon';     link.href = 'https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/logo/favicon.ico';     document.title='Student: (1) My Day';     console.log(document.title);     document.getElementsByTagName('head')[0].appendChild(link); })();	
 }
 else {
 toggle();
 $(document).bind('keydown', 'ctrl+q', toggle);
+$(document).bind('keydown', 'ctrl+2', toggleSpam);
 }
 
 // alert(3);
