@@ -193,7 +193,7 @@ function radio_en(words) {
 	      chars += char + " ";
 	    }
 	}
-	returns chars;
+	return chars;
 }
 function radio_de(words) {
 	words = words.replace(/ /g,'')
