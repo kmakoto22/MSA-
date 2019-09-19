@@ -70,7 +70,9 @@ var DI, DIL;
 function A() {
     var i;
     var DIS;
+	alert(1);
     for(i=0; i-DIL; i++){
+	    alert(2);
         DIS=DI[ i ].style; 
         DIS.position='absolute'; 
         DIS.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px"; 
