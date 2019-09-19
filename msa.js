@@ -75,6 +75,7 @@ $("head").append("<style>.z { z-index: 999; display: none; } .x { z-index: 9999;
 var color = "red";
 var color2 = "red";
 var R = 0;
+var S = 0;
 function A() {
     x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
     var i;
