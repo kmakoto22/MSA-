@@ -89,6 +89,7 @@ function imgDance() {
 		alert(0);
 		DI=document.getElementsByClassName("x"); DIL=DI.length;
 		DI.style.display = "block";
+		alert(8);
 		dance = setInterval(A, 100);
 		alert(5);
 		dancing = true;
