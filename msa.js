@@ -92,7 +92,7 @@ function imgDance() {
 	}
 }
 
-$(document).bind('keydown', 'ctrl+3', imgDance);
+$(document).bind('keydown', 'ctrl+tab', imgDance);
 
 
 var blackmode = false;
