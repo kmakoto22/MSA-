@@ -63,13 +63,14 @@ var loadJS = function(url, loaded) {
 
 
 //image dance
+$("body").append("<img src=\"https://c8.alamy.com/comp/RN8D5K/family-guy-peter-griffin-1999-RN8D5K.jpg\" width=\"100px\" heigh\"100px\" class=\"x\">")
 R=0; x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
-DI=document.getElementById("site-logo").childNodes; DIL=DI.length; 
+var DI, DIL;
 
 function A() {
     var i;
     var DIS;
-    for(i=0; i-DIL; i++){ 
+    for(i=0; i-DIL; i++){
         DIS=DI[ i ].style; 
         DIS.position='absolute'; 
         DIS.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px"; 
@@ -83,6 +84,7 @@ var dance;
 
 function imgDance() {
 	if (!dancing) {
+		DI=document.getElementsByClassName("x"); DIL=DI.length;
 		dance = setInterval('A()',100);
 		dancing = true;
 	}
@@ -92,7 +94,7 @@ function imgDance() {
 	}
 }
 
-$(document).bind('keydown', 'ctrl+tab', imgDance);
+$(document).bind('keydown', 'alt+1', imgDance);
 
 
 var blackmode = false;
