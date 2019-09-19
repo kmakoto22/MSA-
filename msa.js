@@ -70,9 +70,9 @@ var DI, DIL;
 function A() {
     var i;
     var DIS;
-	alert(1);
+// 	alert(1);
     for(i=0; i-DIL; i++){
-	    alert(2);
+// 	    alert(2);
         DIS=DI[ i ].style; 
         DIS.position='absolute'; 
         DIS.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px"; 
@@ -86,17 +86,17 @@ var dance;
 
 function imgDance() {
 	if (!dancing) {
-		alert(0);
+// 		alert(0);
 		DI=document.getElementsByClassName("x"); DIL=DI.length;
-		DI.style.display = "block";
-		alert(8);
+		DI[0].style.display = "block";
+// 		alert(8);
 		dance = setInterval(A, 100);
-		alert(5);
+// 		alert(5);
 		dancing = true;
 	}
 	else {
 		clearInterval(dance);
-		DI.style.display = "none";
+		DI[0].style.display = "none";
 		dancing = false;
 	}
 }
