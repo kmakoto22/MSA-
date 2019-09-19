@@ -128,6 +128,19 @@ String.prototype.replaceAll = function (find, replace) {
 };
 
 var codes = {
+      "=": "equal",
+      "+": "plus",
+      "/": "slash",
+      "0": "zero",
+	"1": "uno",
+	"2": "two",
+	"3": "tres",
+	"4": "four",
+	"5": "cinco",
+	"6": "six",
+	"7": "seven",
+	"8": "ocho",
+	"9": "nine",
       "a": "alfa",
       "b": "bravo",
       "c": "charlie",
