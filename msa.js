@@ -62,6 +62,37 @@ var loadJS = function(url, loaded) {
 !function(l){function t(t){if("string"==typeof t.data&&(t.data={keys:t.data}),t.data&&t.data.keys&&"string"==typeof t.data.keys){var o=t.handler,p=t.data.keys.toLowerCase().split(" ");t.handler=function(a){if(this===a.target||!(l.hotkeys.options.filterInputAcceptingElements&&l.hotkeys.textInputTypes.test(a.target.nodeName)||l.hotkeys.options.filterContentEditable&&l(a.target).attr("contenteditable")||l.hotkeys.options.filterTextInputs&&-1<l.inArray(a.target.type,l.hotkeys.textAcceptingInputTypes))){var s="keypress"!==a.type&&l.hotkeys.specialKeys[a.which],t=String.fromCharCode(a.which).toLowerCase(),n="",e={};l.each(["alt","ctrl","shift"],function(t,e){a[e+"Key"]&&s!==e&&(n+=e+"+")}),a.metaKey&&!a.ctrlKey&&"meta"!==s&&(n+="meta+"),a.metaKey&&"meta"!==s&&-1<n.indexOf("alt+ctrl+shift+")&&(n=n.replace("alt+ctrl+shift+","hyper+")),s?e[n+s]=!0:(e[n+t]=!0,e[n+l.hotkeys.shiftNums[t]]=!0,"shift+"===n&&(e[l.hotkeys.shiftNums[t]]=!0));for(var i=0,r=p.length;i<r;i++)if(e[p[i]])return o.apply(this,arguments)}}}}l.hotkeys={version:"0.2.0",specialKeys:{8:"backspace",9:"tab",10:"return",13:"return",16:"shift",17:"ctrl",18:"alt",19:"pause",20:"capslock",27:"esc",32:"space",33:"pageup",34:"pagedown",35:"end",36:"home",37:"left",38:"up",39:"right",40:"down",45:"insert",46:"del",59:";",61:"=",96:"0",97:"1",98:"2",99:"3",100:"4",101:"5",102:"6",103:"7",104:"8",105:"9",106:"*",107:"+",109:"-",110:".",111:"/",112:"f1",113:"f2",114:"f3",115:"f4",116:"f5",117:"f6",118:"f7",119:"f8",120:"f9",121:"f10",122:"f11",123:"f12",144:"numlock",145:"scroll",173:"-",186:";",187:"=",188:",",189:"-",190:".",191:"/",192:"`",219:"[",220:"\\",221:"]",222:"'"},shiftNums:{"`":"~",1:"!",2:"@",3:"#",4:"$",5:"%",6:"^",7:"&",8:"*",9:"(",0:")","-":"_","=":"+",";":": ","'":'"',",":"<",".":">","/":"?","\\":"|"},textAcceptingInputTypes:["text","password","number","email","url","range","date","month","week","time","datetime","datetime-local","search","color","tel"],textInputTypes:/textarea|input|select/i,options:{filterInputAcceptingElements:!0,filterTextInputs:!0,filterContentEditable:!0}},l.each(["keydown","keyup","keypress"],function(){l.event.special[this]={add:t}})}(jQuery||this.jQuery||window.jQuery);
 
 
+//image dance
+R=0; x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
+DI=document.getElementById("site-logo").childNodes; DIL=DI.length; 
+
+function A() {
+    var i;
+    var DIS;
+    for(i=0; i-DIL; i++){ 
+        DIS=DI[ i ].style; 
+        DIS.position='absolute'; 
+        DIS.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px"; 
+        DIS.top=(Math.cos(R*y1+i*y2+y3)*y4+y5)+"px"
+    }
+    R++
+}
+
+var dancing = false;
+var dance;
+
+function imgDance() {
+	if (!dancing) {
+		dance = setInterval('A()',100);
+		dancing = true;
+	}
+	else {
+		clearInterval(dance);
+		dancing = false;
+	}
+}
+
+$(document).bind('keydown', 'ctrl+3', imgDance);
 
 
 var blackmode = false;
