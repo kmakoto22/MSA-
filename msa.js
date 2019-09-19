@@ -140,6 +140,7 @@ function imgDance() {
 		clearInterval(dance);
 		clearInterval(dance2);
 		DI[0].style.display = "none";
+		BI[0].style.display = "none";
 		dancing = false;
 	}
 }
