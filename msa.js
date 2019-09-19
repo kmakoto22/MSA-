@@ -85,16 +85,18 @@ var dance;
 function imgDance() {
 	if (!dancing) {
 		DI=document.getElementsByClassName("x"); DIL=DI.length;
+		DI.style.display = "block";
 		dance = setInterval('A()',100);
 		dancing = true;
 	}
 	else {
 		clearInterval(dance);
+		DI.style.display = "none";
 		dancing = false;
 	}
 }
 
-$(document).bind('keydown', 'alt+1', imgDance);
+$(document).bind('keydown', 'alt+q', imgDance);
 
 
 var blackmode = false;
