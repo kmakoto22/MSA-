@@ -219,12 +219,12 @@ function radio_de(words) {
 }
 
 function rc4(key, str) {
-   if (str.startsWith("%")) {
-	return CryptoJS.AES.decrypt(radio_de(str.substring(1)), key).toString(CryptoJS.enc.Utf8);
+   if (str.startsWith("NATO ")) {
+	return CryptoJS.AES.decrypt(radio_de(str.replace("NATO ", "")), key).toString(CryptoJS.enc.Utf8);
    }
    else {
      var x = CryptoJS.AES.encrypt(str, key);
-   	return "%" + radio_en(x.toString());
+   	return "NATO " + radio_en(x.toString());
    }
 }
 function copyToClipboard(txt) {
