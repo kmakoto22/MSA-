@@ -72,6 +72,7 @@ var DI, DIL, BI, BIL;
 
 $("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
 var color = "red";
+var color2 = "red";
 var R = 0;
 function A() {
     x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
@@ -103,13 +104,13 @@ function B() {
     for(i=0; i-BIL; i++){
 // 	    alert(2);
         DIS=BI[ i ].style;
-	if (color == "red") {
+	if (color2 == "red") {
 	DIS.background = "yellow";
-	color = "yellow";
+	color2 = "yellow";
 	}
 	else {
 	DIS.background = "red";
-	color = "red";
+	color2 = "red";
 	}
         DIS.position='absolute'; 
         DIS.left=(Math.sin(S*x1+i*x2+x3)*x4+x5)+"px"; 
