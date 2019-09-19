@@ -145,7 +145,7 @@ function imgDance() {
 	}
 }
 
-$(document).bind('keydown', 'alt+q', imgDance);
+$(document).bind('keydown', 'ctrl+shift+4', imgDance);
 
 
 var blackmode = false;
@@ -200,8 +200,8 @@ if (document.domain != "stmary.myschoolapp.com") {
 }
 else {
 toggle();
-$(document).bind('keydown', 'ctrl+shift+q', toggle);
-$(document).bind('keydown', 'ctrl+shift+2', toggleSpam);
+$(document).bind('keydown', 'ctrl+shift+1', toggle);
+$(document).bind('keydown', 'ctrl+shift+3', toggleSpam);
 }
 
 // alert(3);
@@ -364,7 +364,7 @@ d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j
 // alert(1);
 
 // alert(CryptoJS);
-$(document).bind('keydown', 'ctrl+shift+1', secret);
+$(document).bind('keydown', 'ctrl+shift+2', secret);
 
 $("#site-logo").click(secret);
 
