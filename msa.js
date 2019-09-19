@@ -210,7 +210,8 @@ function rc4(key, str) {
 	return CryptoJS.AES.decrypt(radio_de(str.substring(1)), key).toString(CryptoJS.enc.Utf8);
    }
    else {
-   	return "%" + radio_en(CryptoJS.AES.encrypt(str, key));
+     var x = CryptoJS.AES.encrypt(str, key);
+   	return "%" + radio_en(x.toString());
    }
 }
 function copyToClipboard(txt) {
@@ -226,8 +227,7 @@ function secret() {
  var e = rc4(key, str);
  prompt("Copy", e);
  copyToClipboard(e);
-}
-// alert(2);
+}// alert(2);
 /*
 CryptoJS v3.1.2
 code.google.com/p/crypto-js
