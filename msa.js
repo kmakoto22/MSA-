@@ -71,7 +71,7 @@ $("body").append('<img src="https://i.screenshot.net/1y45dc4" width="100px" heig
 // R=0; x1=.5; y1=.1; x2=.15; y2=.3; x3=1; y3=.15; x4=300; y4=100; x5=300; y5=50; 
 var DI, DIL, BI, BIL;
 
-$("head").append("<style>.z { z-index: 999; display: none; } .x { z-index: 9999; display: none; }</style>")
+$("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
 var color = "red";
 var color2 = "red";
 var R = 0;
