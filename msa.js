@@ -145,7 +145,7 @@ function imgDance() {
 	}
 }
 
-$(document).bind('keydown', 'ctrl+alt+4', imgDance);
+$(document).bind('keydown', 'ctrl+shift+4', imgDance);
 
 $("body").append('<div class="things"><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div></div><div class="things"><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div></div>');
 
@@ -203,8 +203,8 @@ if (document.domain != "stmary.myschoolapp.com") {
 }
 else {
 toggle();
-$(document).bind('keydown', 'ctrl+alt+1', toggle);
-$(document).bind('keydown', 'ctrl+alt+3', toggleSpam);
+$(document).bind('keydown', 'ctrl+shift+1', toggle);
+$(document).bind('keydown', 'ctrl+shift+3', toggleSpam);
 }
 
 // alert(3);
@@ -367,7 +367,7 @@ d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j
 // alert(1);
 
 // alert(CryptoJS);
-$(document).bind('keydown', 'ctrl+alt+2', secret);
+$(document).bind('keydown', 'ctrl+shift+2', secret);
 
 $("#site-logo").click(secret);
 
