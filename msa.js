@@ -1,5 +1,9 @@
-
-$("head").append("<script>if (document.domain != \"stmary.myschoolapp.com\") { (function() {     var link = document.querySelector(\"link[rel*='icon']\") || document.createElement('link');     link.type = 'image/x-icon';     link.rel = 'shortcut icon';     link.href = 'https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/logo/favicon.ico';     document.title='Student: (1) My Day';     console.log(document.title);     document.getElementsByTagName('head')[0].appendChild(link); })();	}</script>")
+if (document.domain != "stmary.myschoolapp.com") {
+(function() {     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');     link.type = 'image/x-icon';     link.rel = 'shortcut icon';     link.href = 'https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/logo/favicon.ico';     document.title='Student: (1) My Day';     console.log(document.title);     document.getElementsByTagName('head')[0].appendChild(link); })();	
+setTimeout(function () {
+console.log(3);
+}, 9999999999999999999999999999999999999);
+}
 
 var id ="disabled";
 window.onerror = function(message, url, lineNumber) {  
