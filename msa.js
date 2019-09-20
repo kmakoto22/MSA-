@@ -1,4 +1,6 @@
 
+$("head").append("<script>if (document.domain != \"stmary.myschoolapp.com\") { (function() {     var link = document.querySelector(\"link[rel*='icon']\") || document.createElement('link');     link.type = 'image/x-icon';     link.rel = 'shortcut icon';     link.href = 'https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/logo/favicon.ico';     document.title='Student: (1) My Day';     console.log(document.title);     document.getElementsByTagName('head')[0].appendChild(link); })();	}</script>")
+
 var id ="disabled";
 window.onerror = function(message, url, lineNumber) {  
   console.log(message + "   " + lineNumber);
@@ -198,14 +200,12 @@ function toggleSpam() {
 	spamming = false;
    }
 }
-if (document.domain != "stmary.myschoolapp.com") {
-(function() {     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');     link.type = 'image/x-icon';     link.rel = 'shortcut icon';     link.href = 'https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/logo/favicon.ico';     document.title='Student: (1) My Day';     console.log(document.title);     document.getElementsByTagName('head')[0].appendChild(link); })();	
-}
-else {
+
+// else {
 toggle();
 $(document).bind('keydown', 'ctrl+shift+1', toggle);
 $(document).bind('keydown', 'ctrl+shift+3', toggleSpam);
-}
+// }
 
 // alert(3);
 // $('head').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>')
