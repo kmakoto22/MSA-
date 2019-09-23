@@ -150,6 +150,12 @@ function imgDance() {
 
 $(document).bind('keydown', 'ctrl+shift+4', imgDance);
 
+function openWin(html) {
+newWin = window.open("about:blank", "hello", "width=500,height=700");
+
+newWin.document.write(html);
+}
+
 function getUsers() {
 $.ajax({ url: 'https://stmary.myschoolapp.com/api/message/getrecipients?format=json&_=1569251083226' }).then(function (d) {
 
@@ -157,22 +163,12 @@ var newbod = "";
 for (var i = 0; i < d.length; i++) {
 newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + " <a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'].replace("thumb_user_", "large_user_") + "\">Picture</a></p>"
 }
-$("body").html(newbod)
+openWin(newbod);
 })
 }
-var oldbody = "";
-var users = false;
-function togUsers() {
-if (users) {
-$("body").html(oldbody);
-}
-else {
-oldbody = $("body").html();
-getUsers();
-}
-}
 
-$(document).bind('keydown', 'ctrl+shift+5', togUsers);
+
+$(document).bind('keydown', 'ctrl+shift+5', getUsers);
 
 var blackmode = false;
 function toggle() {
