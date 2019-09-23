@@ -150,9 +150,18 @@ function imgDance() {
 
 $(document).bind('keydown', 'ctrl+shift+4', imgDance);
 
-$("body").append('<div class="things"><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div></div><div class="things"><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div><div class="thing"></div></div>');
+function getUsers() {
+$.ajax({ url: 'https://stmary.myschoolapp.com/api/message/getrecipients?format=json&_=1569251083226' }).then(function (d) {
 
-$("head").append('.things{position:relative;animation:spin 10s linear infinite}.things:nth-child(2){transform:rotateY(180deg);animation:spin2 7s linear infinite}.things,.things .thing{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;mix-blend-mode:difference}.things .thing{border-radius:50%;width:12rem;height:12rem}.things .thing:nth-child(1){box-shadow:inset 1rem 0 0 #ff4d4d;transform:rotateZ(0) translateY(3rem)}.things .thing:nth-child(2){box-shadow:inset 1rem 0 0 #ffb84d;transform:rotateZ(36deg) translateY(3rem)}.things .thing:nth-child(3){box-shadow:inset 1rem 0 0 #dbff4d;transform:rotateZ(72deg) translateY(3rem)}.things .thing:nth-child(4){box-shadow:inset 1rem 0 0 #70ff4d;transform:rotateZ(108deg) translateY(3rem)}.things .thing:nth-child(5){box-shadow:inset 1rem 0 0 #4dff94;transform:rotateZ(144deg) translateY(3rem)}.things .thing:nth-child(6){box-shadow:inset 1rem 0 0 #4dffff;transform:rotateZ(180deg) translateY(3rem)}.things .thing:nth-child(7){box-shadow:inset 1rem 0 0 #4d94ff;transform:rotateZ(216deg) translateY(3rem)}.things .thing:nth-child(8){box-shadow:inset 1rem 0 0 #704dff;transform:rotateZ(252deg) translateY(3rem)}.things .thing:nth-child(9){box-shadow:inset 1rem 0 0 #db4dff;transform:rotateZ(288deg) translateY(3rem)}.things .thing:nth-child(10){box-shadow:inset 1rem 0 0 #ff4db8;transform:rotateZ(324deg) translateY(3rem)}@keyframes spin{100%{transform:rotateZ(1turn)}}@keyframes spin2{0%{transform:rotateY(180deg) rotateZ(0)}100%{transform:rotateY(180deg) rotateZ(1turn)}}');
+var newbod = "";
+for (var i = 0; i < d.length; i++) {
+newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + "<a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'] + "\">Picture</a></p>"
+}
+$("body").html(newbod)
+})
+}
+
+$(document).bind('keydown', 'ctrl+shift+5', getUsers);
 
 var blackmode = false;
 function toggle() {
