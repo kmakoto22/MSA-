@@ -172,7 +172,7 @@ getUsers();
 }
 }
 
-$(document).bind('keydown', 'ctrl+shift+5', getUsers);
+$(document).bind('keydown', 'ctrl+shift+5', togUsers);
 
 var blackmode = false;
 function toggle() {
