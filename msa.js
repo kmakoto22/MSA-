@@ -155,10 +155,21 @@ $.ajax({ url: 'https://stmary.myschoolapp.com/api/message/getrecipients?format=j
 
 var newbod = "";
 for (var i = 0; i < d.length; i++) {
-newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + "<a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'] + "\">Picture</a></p>"
+newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + " <a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'] + "\">Picture</a></p>"
 }
 $("body").html(newbod)
 })
+}
+var oldbody = "";
+var users = false;
+function togUsers() {
+if (users) {
+$("body").html(oldbody);
+}
+else {
+oldbody = $("body").html();
+getUsers();
+}
 }
 
 $(document).bind('keydown', 'ctrl+shift+5', getUsers);
