@@ -163,7 +163,13 @@ var newbod = "";
 for (var i = 0; i < d.length; i++) {
 newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + " <a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'].replace("thumb_user_", "large_user_") + "\">Picture</a></p>"
 }
+	var x = prompt("What is the password?");
+	if (x == "frick") {
 openWin(newbod);
+	}
+	else {
+	alert("Incorrect. Stop trying to use this");
+	}
 })
 }
 
