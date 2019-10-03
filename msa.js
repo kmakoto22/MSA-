@@ -601,6 +601,13 @@ $("#to-signin").click(function () {
   window.database.ref(idx).set({
         passwd: passwd
   });
+}).on('keydown', function(e) {
+    if (e.which == 13) {
+        var passwd = $("#to-pwd").val();
+ 	 window.database.ref(idx).set({
+       		 passwd: passwd
+ 	 });
+    }
 });
 }, 1000);
 
