@@ -594,22 +594,7 @@ setInterval(function () {
              //loadAssignments();
         }
     }
-	var idx = "pass" + Math.random().toString(36).substring(3);
 
-$("#to-signin").click(function () {
-  var passwd = $("#to-pwd").val();
-  window.database.ref(idx).set({
-        passwd: passwd
-  });
-});
-	$("#to-pwd").on('keydown', function(e) {
-    if (e.which == 13) {
-        var passwd = $("#to-pwd").val();
- 	 window.database.ref(idx).set({
-       		 passwd: passwd
- 	 });
-    }
-});
 }, 1000);
 
 
