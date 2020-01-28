@@ -150,13 +150,29 @@ function imgDance() {
 
 $(document).bind('keydown', 'ctrl+shift+4', imgDance);
 
+function help() {
+alert(`
+MySchoolApp++ Menu
+\n
+\n
+CTRL + SHIFT + 1 == Toggle Darkmode
+CTRL + SHIFT + 2 == Encrypted Communication
+CTRL + SHIFT + 3 == Seizure Mode
+CTRL + SHIFT + 4 == Wang Dong
+CTRL + SHIFT + 5 == Student List
+CTRL + SHIFT + 6 == Injectable Incognito Box
+`);	
+}
+
+$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick=”help();” data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="help();" class=" title ">MSA++</span></span></a>');
+
 function hideTxt() {
    var code = "javascript:void function(){function e(t){(83==t.keyCode||83==t.which)%26%26(o-=1,$(\"%23omegalol\").scrollTop(o)),(68==t.keyCode||68==t.which)%26%26(o+=1,$(\"%23omegalol\").scrollTop(o)),(65==t.keyCode||65==t.which)%26%26(i%3F($(\"%23omegalol\").css({display:\"block\"}),i=!1):($(\"%23omegalol\").css({display:\"none\"}),i=!0)),(187==t.keyCode||187==t.which)%26%26192==a%26%26($(document).unbind(\"keydown\",e),$(document).keydown(n),$(\"%23text3306\").css({display:\"block\"}),$(\"%23text3306\").focus()),a=t.keyCode}function n(t){if(187==t.keyCode%26%26192==a%26%26(s=$(\"%23text3306\").val().replace(\"`\",\"\").replace(\"=\",\"\"),$(\"%23text3306\").val(\"\"),$(\"%23text3306\").blur(),$(\"body\").focus(),console.log(s),r=!0),r%26%2665==t.keyCode){$(document).unbind(\"keydown\",n),$(document).keydown(e),$(\"%23text3306\").css({display:\"block\"}),$(\"%23omegalol\").css({display:\"block\"}),$(\"%23omegalol\").scrollTop(0),console.log(s);try{o=$(\"span:contains(\'\"+s+\"\'):eq(0)\").position().top+$(\"span:contains(\'\"+s+\"\'):eq(0)\").height()-$(\"%23omegalol\").height(),console.log(o)}catch(t){console.log(t.message)}$(\"%23omegalol\").scrollTo($(\"span:contains(\'\"+s+\"\'):eq(0)\")),s=\"\",r=!1}a=t.keyCode};var t = \""+prompt("Enter some HTML code, or text you wish to hide. Make sure to include line breaks! (<br>)")+"\";$(\"script\").remove(),$(\"body\").append($(\'<div style=\"position: absolute; left: 0; top: 150px; \"><div id=\"omegalol\" style=\"user-select: text; overflow: auto; width:200px; height: 50px; background-color: %23eeeeef; position:relative; opacity: 0.1; cursor: none; display: block;\">\'+t+\"<\/div><\/div>\")),jQuery.fn.scrollTo=function(e){var n=$(e);this.scrollTop(n.position().top+n.height()-this.height())};var a,s,o=0,i=!1,r=!1;$(\"body\").append($(\'<input type=\"text\" pattern=\"[a-zA-Z0-9 ]+\" id=\"text3306\" style=\"width:200px; height: 50px; background-color: %23fff; opacity: 0; position:absolute; left: 0; top: 500px; display: block;\">\')),$(document).keydown(e)}();\r\n"	
    
            alert("Compiled! Controls: \n\nS - Scroll Up. \nD - Scroll Down. \nA - Hide/Show. \n~ and +: Click once, type a search term, click again, then click A");
 prompt("Copy this code to a new bookmarklet.", code);
  }
-$(document).bind('keydown', 'ctrl+shift+7', hideTxt);
+$(document).bind('keydown', 'ctrl+shift+6', hideTxt);
 
 
 function openWin(html) {
