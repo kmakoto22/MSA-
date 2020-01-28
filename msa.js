@@ -214,7 +214,7 @@ function hideTxt() {
 		toggle();	
 // 	}
 	
-	eval(code);
+// 	eval(code);
 	
 	alert("Compiled! Controls: \n\nS - Scroll Up. \nD - Scroll Down. \nA - Hide/Show. \n~ and +: Click once, type a search term, click again, then click A");
 // 	prompt("Copy this code to a new bookmarklet.", code);
