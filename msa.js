@@ -44,182 +44,26 @@ b.keySize,b.ivSize);l.iv=d.iv;b=a.encrypt.call(this,b,c,d.key,l);b.mixIn(d);retu
 8&255]]^n[l[k&255]]},encryptBlock:function(a,b){this._doCryptBlock(a,b,this._keySchedule,t,r,w,v,l)},decryptBlock:function(a,c){var d=a[c+1];a[c+1]=a[c+3];a[c+3]=d;this._doCryptBlock(a,c,this._invKeySchedule,b,x,q,n,s);d=a[c+1];a[c+1]=a[c+3];a[c+3]=d},_doCryptBlock:function(a,b,c,d,e,j,l,f){for(var m=this._nRounds,g=a[b]^c[0],h=a[b+1]^c[1],k=a[b+2]^c[2],n=a[b+3]^c[3],p=4,r=1;r<m;r++)var q=d[g>>>24]^e[h>>>16&255]^j[k>>>8&255]^l[n&255]^c[p++],s=d[h>>>24]^e[k>>>16&255]^j[n>>>8&255]^l[g&255]^c[p++],t=
 d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j[h>>>8&255]^l[k&255]^c[p++],g=q,h=s,k=t;q=(f[g>>>24]<<24|f[h>>>16&255]<<16|f[k>>>8&255]<<8|f[n&255])^c[p++];s=(f[h>>>24]<<24|f[k>>>16&255]<<16|f[n>>>8&255]<<8|f[g&255])^c[p++];t=(f[k>>>24]<<24|f[n>>>16&255]<<16|f[g>>>8&255]<<8|f[h&255])^c[p++];n=(f[n>>>24]<<24|f[g>>>16&255]<<16|f[h>>>8&255]<<8|f[k&255])^c[p++];a[b]=q;a[b+1]=s;a[b+2]=t;a[b+3]=n},keySize:8});u.AES=p._createHelper(d)})();
 
-$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="x">')
-$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="z">')
+function createVars() {
+	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="x">')
+	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="z">')
+	$("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
+	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick=”help();” data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="help();" class=" title ">MSA++</span></span></a>');
 
-var DI, DIL, BI, BIL;
-
-$("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
-var color = "red";
-var color2 = "red";
-var R = 0;
-var S = 0;
-function A() {
-    x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
-    var i;
-    var DIS;
-    for(i=0; i-DIL; i++){
-        DIS=DI[ i ].style;
-	if (color == "red") {
-	DIS.background = "yellow";
-	color = "yellow";
-	}
-	else {
-	DIS.background = "red";
-	color = "red";
-	}
-        DIS.position='absolute'; 
-        DIS.left=(Math.sin(R*x1+i*x2+x3)*x4+x5)+"px"; 
-        DIS.top=(Math.cos(R*y1+i*y2+y3)*y4+y5)+"px"
-    }
-    R++
-}
-function B() {
-    x1=.5; y1=.1; x2=.15; y2=.3; x3=1; y3=.15; x4=300; y4=100; x5=300; y5=50; 
-    var i;
-    var DIS;
-    for(i=0; i-BIL; i++){
-        DIS=BI[ i ].style;
-	if (color2 == "red") {
-	DIS.background = "yellow";
-	color2 = "yellow";
-	}
-	else {
-	DIS.background = "red";
-	color2 = "red";
-	}
-        DIS.position='absolute'; 
-        DIS.left=(Math.sin(S*x1+i*x2+x3)*x4+x5)+"px"; 
-        DIS.top=(Math.cos(S*y1+i*y2+y3)*y4+y5)+"px"
-    }
-    S++
-}
-var dancing = false;
-var dance, dance2;
-
-function imgDance() {
-	if (!dancing) {
-		DI=document.getElementsByClassName("x"); DIL=DI.length;
-		BI=document.getElementsByClassName("z"); BIL=BI.length;
-		DI[0].style.display = "block";
-		BI[0].style.display = "block";
-		dance = setInterval(A, 100);
-		dance2 = setInterval(B, 100);
-		dancing = true;
-	}
-	else {
-		clearInterval(dance);
-		clearInterval(dance2);
-		DI[0].style.display = "none";
-		BI[0].style.display = "none";
-		dancing = false;
-	}
-}
-
-$(document).bind('keydown', 'ctrl+shift+4', imgDance);
-
-function help() {
-	alert(`
-		MySchoolApp++ Menu
-		\n
-		\n
-		CTRL + SHIFT + 1 == Toggle Darkmode\n
-		CTRL + SHIFT + 2 == Encrypted Communication\n
-		CTRL + SHIFT + 3 == Seizure Mode\n
-		CTRL + SHIFT + 4 == Wang Dong\n
-		CTRL + SHIFT + 5 == Student List\n
-		CTRL + SHIFT + 6 == Injectable Incognito Box\n
-	`);	
-}
-
-$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick=”help();” data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="help();" class=" title ">MSA++</span></span></a>');
-
-function hideTxt() {
-	var code = "javascript:void function(){function e(t){(83==t.keyCode||83==t.which)%26%26(o-=1,$(\"%23omegalol\").scrollTop(o)),(68==t.keyCode||68==t.which)%26%26(o+=1,$(\"%23omegalol\").scrollTop(o)),(65==t.keyCode||65==t.which)%26%26(i%3F($(\"%23omegalol\").css({display:\"block\"}),i=!1):($(\"%23omegalol\").css({display:\"none\"}),i=!0)),(187==t.keyCode||187==t.which)%26%26192==a%26%26($(document).unbind(\"keydown\",e),$(document).keydown(n),$(\"%23text3306\").css({display:\"block\"}),$(\"%23text3306\").focus()),a=t.keyCode}function n(t){if(187==t.keyCode%26%26192==a%26%26(s=$(\"%23text3306\").val().replace(\"`\",\"\").replace(\"=\",\"\"),$(\"%23text3306\").val(\"\"),$(\"%23text3306\").blur(),$(\"body\").focus(),console.log(s),r=!0),r%26%2665==t.keyCode){$(document).unbind(\"keydown\",n),$(document).keydown(e),$(\"%23text3306\").css({display:\"block\"}),$(\"%23omegalol\").css({display:\"block\"}),$(\"%23omegalol\").scrollTop(0),console.log(s);try{o=$(\"span:contains(\'\"+s+\"\'):eq(0)\").position().top+$(\"span:contains(\'\"+s+\"\'):eq(0)\").height()-$(\"%23omegalol\").height(),console.log(o)}catch(t){console.log(t.message)}$(\"%23omegalol\").scrollTo($(\"span:contains(\'\"+s+\"\'):eq(0)\")),s=\"\",r=!1}a=t.keyCode};var t = \""+prompt("Enter some HTML code, or text you wish to hide. Make sure to include line breaks! (<br>)")+"\";$(\"script\").remove(),$(\"body\").append($(\'<div style=\"position: absolute; left: 0; top: 150px; \"><div id=\"omegalol\" style=\"user-select: text; overflow: auto; width:200px; height: 50px; background-color: %23eeeeef; position:relative; opacity: 0.1; cursor: none; display: block;\">\'+t+\"<\/div><\/div>\")),jQuery.fn.scrollTo=function(e){var n=$(e);this.scrollTop(n.position().top+n.height()-this.height())};var a,s,o=0,i=!1,r=!1;$(\"body\").append($(\'<input type=\"text\" pattern=\"[a-zA-Z0-9 ]+\" id=\"text3306\" style=\"width:200px; height: 50px; background-color: %23fff; opacity: 0; position:absolute; left: 0; top: 500px; display: block;\">\')),$(document).keydown(e)}();\r\n"	
-   
-	alert("Compiled! Controls: \n\nS - Scroll Up. \nD - Scroll Down. \nA - Hide/Show. \n~ and +: Click once, type a search term, click again, then click A");
-	prompt("Copy this code to a new bookmarklet.", code);
- }
-$(document).bind('keydown', 'ctrl+shift+6', hideTxt);
-
-
-function openWin(html) {
-	newWin = window.open("about:blank", "hello", "width=500,height=700");
-	newWin.document.write(html);
-}
-
-function getUsers() {
-	$.ajax({ url: 'https://stmary.myschoolapp.com/api/message/getrecipients?format=json&_=1569251083226' }).then(function (d) {
-
-		var newbod = "";
-		for (var i = 0; i < d.length; i++) {
-			newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + " <a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'].replace("thumb_user_", "large_user_") + "\">Picture</a></p>"
-		}
-		openWin(newbod);
-	})
-}
-
-
-$(document).bind('keydown', 'ctrl+shift+5', getUsers);
-
-var blackmode = false;
-function toggle() {
-   	if (!blackmode) {
-       		$("html, img, video").attr("style", "-webkit-filter:invert(1)hue-rotate(180deg);filter:invert(1)hue-rotate(180deg)");
-       		$("body").attr("style", "background:#000");
-       		$('#site-header-container')
-       			.removeClass("pri-100-bgc")
-       			.attr("style", "background-color: #fff !important;");
-       		$('#site-header')
-       			.removeClass("pri-100-bgc")
-       			.attr("style", "background-color: #fff !important;");
-       		$("#site-search-input")
-       			.parent().parent().parent().parent()
-       			.find("*")
-			.attr("style", "color: black;");
-       		blackmode = true;
-   	}
-   	else {
-       		$("html, img, video").attr("style", "");
-       		$("body").attr("style", "");
-       		$('#site-header-container')
-    			.addClass("pri-100-bgc")
-    			.attr("style", "");
-    		$('#site-header')
-    			.addClass("pri-100-bgc")
-    			.attr("style", "");
-    		$("#site-search-input")
-    			.parent().parent().parent().parent()
-    			.find("*")
-    			.attr("style", "");
-       		blackmode = false;
-   	}
-}
-var spamming = false;
-var spamInterval;
-function toggleSpam() {
-   	if (!spamming) {
-   		spamInterval = setInterval(function () {
-			toggle();
-		}, 25)
-		spamming = true;
-   	}
-  	else {
-		clearInterval(spamInterval);
-		spamming = false;
-   	}
-}
-
-toggle();
-$(document).bind('keydown', 'ctrl+shift+1', toggle);
-$(document).bind('keydown', 'ctrl+shift+3', toggleSpam);
-
-String.prototype.replaceAll = function (find, replace) {
-   	var str = this;
-    	return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
-};
-
-var codes = {
+	window.DI = 0; window.DIL = 0; window.BI = 0; window.BIL = 0;
+	window.dancing = false;
+	window.dance = 0;
+	window.dance2 = 0;
+	window.color = "red";
+	window.color2 = "red";
+	window.R = 0;
+	window.S = 0;
+	window.blackmode = false;
+	window.spamming = false;
+	window.spamInterval = false;
+	
+	
+	window.codes = {
       "=": "equal",
       "+": "plus",
       "/": "slash",
@@ -285,14 +129,169 @@ var codes = {
       "X": "Xray",
       "Y": "Yankee",
       "Z": "Zulu"
+	}
 }
+createVars();
+
+function A() {
+    x1=.1; y1=.05; x2=.25; y2=.24; x3=1.6; y3=.24; x4=300; y4=200; x5=300; y5=200; 
+    var i;
+    var DIS;
+    for(i=0; i-window.DIL; i++){
+        DIS=window.DI[ i ].style;
+	if (window.color == "red") {
+	DIS.background = "yellow";
+	window.color = "yellow";
+	}
+	else {
+	DIS.background = "red";
+	window.color = "red";
+	}
+        DIS.position='absolute'; 
+        DIS.left=(Math.sin(window.R*x1+i*x2+x3)*x4+x5)+"px"; 
+        DIS.top=(Math.cos(window.R*y1+i*y2+y3)*y4+y5)+"px"
+    }
+    window.R++
+}
+function B() {
+    x1=.5; y1=.1; x2=.15; y2=.3; x3=1; y3=.15; x4=300; y4=100; x5=300; y5=50; 
+    var i;
+    var DIS;
+    for(i=0; i-window.BIL; i++){
+        DIS=window.BI[ i ].style;
+	if (window.color2 == "red") {
+	DIS.background = "yellow";
+	window.color2 = "yellow";
+	}
+	else {
+	DIS.background = "red";
+	window.color2 = "red";
+	}
+        DIS.position='absolute'; 
+        DIS.left=(Math.sin(window.S*x1+i*x2+x3)*x4+x5)+"px"; 
+        DIS.top=(Math.cos(window.S*y1+i*y2+y3)*y4+y5)+"px"
+    }
+    window.S++
+}
+
+function imgDance() {
+	if (!dancing) {
+		window.DI=document.getElementsByClassName("x"); window.DIL=window.DI.length;
+		window.BI=document.getElementsByClassName("z"); window.BIL=window.BI.length;
+		window.DI[0].style.display = "block";
+		window.BI[0].style.display = "block";
+		window.dance = setInterval(A, 100);
+		window.dance2 = setInterval(B, 100);
+		window.dancing = true;
+	}
+	else {
+		clearInterval(window.dance);
+		clearInterval(window.dance2);
+		window.DI[0].style.display = "none";
+		window.BI[0].style.display = "none";
+		window.dancing = false;
+	}
+}
+
+
+function help() {
+	alert(`
+		MySchoolApp++ Menu
+		\n
+		\n
+		CTRL + SHIFT + 1 == Toggle Darkmode\n
+		CTRL + SHIFT + 2 == Encrypted Communication\n
+		CTRL + SHIFT + 3 == Seizure Mode\n
+		CTRL + SHIFT + 4 == Wang Dong\n
+		CTRL + SHIFT + 5 == Student List\n
+		CTRL + SHIFT + 6 == Injectable Incognito Box\n
+	`);	
+}
+
+
+function hideTxt() {
+	var code = "javascript:void function(){function e(t){(83==t.keyCode||83==t.which)%26%26(o-=1,$(\"%23omegalol\").scrollTop(o)),(68==t.keyCode||68==t.which)%26%26(o+=1,$(\"%23omegalol\").scrollTop(o)),(65==t.keyCode||65==t.which)%26%26(i%3F($(\"%23omegalol\").css({display:\"block\"}),i=!1):($(\"%23omegalol\").css({display:\"none\"}),i=!0)),(187==t.keyCode||187==t.which)%26%26192==a%26%26($(document).unbind(\"keydown\",e),$(document).keydown(n),$(\"%23text3306\").css({display:\"block\"}),$(\"%23text3306\").focus()),a=t.keyCode}function n(t){if(187==t.keyCode%26%26192==a%26%26(s=$(\"%23text3306\").val().replace(\"`\",\"\").replace(\"=\",\"\"),$(\"%23text3306\").val(\"\"),$(\"%23text3306\").blur(),$(\"body\").focus(),console.log(s),r=!0),r%26%2665==t.keyCode){$(document).unbind(\"keydown\",n),$(document).keydown(e),$(\"%23text3306\").css({display:\"block\"}),$(\"%23omegalol\").css({display:\"block\"}),$(\"%23omegalol\").scrollTop(0),console.log(s);try{o=$(\"span:contains(\'\"+s+\"\'):eq(0)\").position().top+$(\"span:contains(\'\"+s+\"\'):eq(0)\").height()-$(\"%23omegalol\").height(),console.log(o)}catch(t){console.log(t.message)}$(\"%23omegalol\").scrollTo($(\"span:contains(\'\"+s+\"\'):eq(0)\")),s=\"\",r=!1}a=t.keyCode};var t = \""+prompt("Enter some HTML code, or text you wish to hide. Make sure to include line breaks! (<br>)")+"\";$(\"script\").remove(),$(\"body\").append($(\'<div style=\"position: absolute; left: 0; top: 150px; \"><div id=\"omegalol\" style=\"user-select: text; overflow: auto; width:200px; height: 50px; background-color: %23eeeeef; position:relative; opacity: 0.1; cursor: none; display: block;\">\'+t+\"<\/div><\/div>\")),jQuery.fn.scrollTo=function(e){var n=$(e);this.scrollTop(n.position().top+n.height()-this.height())};var a,s,o=0,i=!1,r=!1;$(\"body\").append($(\'<input type=\"text\" pattern=\"[a-zA-Z0-9 ]+\" id=\"text3306\" style=\"width:200px; height: 50px; background-color: %23fff; opacity: 0; position:absolute; left: 0; top: 500px; display: block;\">\')),$(document).keydown(e)}();\r\n"	
+   
+	alert("Compiled! Controls: \n\nS - Scroll Up. \nD - Scroll Down. \nA - Hide/Show. \n~ and +: Click once, type a search term, click again, then click A");
+	prompt("Copy this code to a new bookmarklet.", code);
+ }
+
+
+function openWin(html) {
+	newWin = window.open("about:blank", "hello", "width=500,height=700");
+	newWin.document.write(html);
+}
+
+function getUsers() {
+	$.ajax({ url: 'https://stmary.myschoolapp.com/api/message/getrecipients?format=json&_=1569251083226' }).then(function (d) {
+
+		var newbod = "";
+		for (var i = 0; i < d.length; i++) {
+			newbod += "<p>" + d[i]['name'] + " | " + d[i]['userId'] + " <a href=\"https://bbk12e1-cdn.myschoolcdn.com/ftpimages/896/user/" + d[i]['thumbFilename'].replace("thumb_user_", "large_user_") + "\">Picture</a></p>"
+		}
+		openWin(newbod);
+	})
+}
+
+function toggle() {
+   	if (!window.blackmode) {
+       		$("html, img, video").attr("style", "-webkit-filter:invert(1)hue-rotate(180deg);filter:invert(1)hue-rotate(180deg)");
+       		$("body").attr("style", "background:#000");
+       		$('#site-header-container')
+       			.removeClass("pri-100-bgc")
+       			.attr("style", "background-color: #fff !important;");
+       		$('#site-header')
+       			.removeClass("pri-100-bgc")
+       			.attr("style", "background-color: #fff !important;");
+       		$("#site-search-input")
+       			.parent().parent().parent().parent()
+       			.find("*")
+			.attr("style", "color: black;");
+       		window.blackmode = true;
+   	}
+   	else {
+       		$("html, img, video").attr("style", "");
+       		$("body").attr("style", "");
+       		$('#site-header-container')
+    			.addClass("pri-100-bgc")
+    			.attr("style", "");
+    		$('#site-header')
+    			.addClass("pri-100-bgc")
+    			.attr("style", "");
+    		$("#site-search-input")
+    			.parent().parent().parent().parent()
+    			.find("*")
+    			.attr("style", "");
+       		window.blackmode = false;
+   	}
+}
+
+function toggleSpam() {
+   	if (!window.spamming) {
+   		window.spamInterval = setInterval(function () {
+			toggle();
+		}, 25)
+		window.spamming = true;
+   	}
+  	else {
+		clearInterval(window.spamInterval);
+		window.spamming = false;
+   	}
+}
+
+toggle();
+
+String.prototype.replaceAll = function (find, replace) {
+   	var str = this;
+    	return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
+};
 
 function radio_en(words) {
 	var chars = "";
 	for (var i = 0; i < words.length; i++) {
 	    	var char = words.charAt(i);
-	    	if (char in codes) {
-	      		chars += codes[char] + " ";
+	    	if (char in window.codes) {
+	      		chars += window.codes[char] + " ";
 	    	}
 	    	else {
 	      		chars += char + " ";
@@ -302,8 +301,8 @@ function radio_en(words) {
 }
 function radio_de(words) {
 	words = words.replace(/ /g,'')
-	for (key in codes) {
-	    	var code = codes[key];
+	for (key in window.codes) {
+	    	var code = window.codes[key];
 	    	words = words.replaceAll(code, key);
 	}
 	return words;	
@@ -333,9 +332,14 @@ function secret() {
  	copyToClipboard(e);
 }
 
+$(document).bind('keydown', 'ctrl+shift+1', toggle);
 $(document).bind('keydown', 'ctrl+shift+2', secret);
+$(document).bind('keydown', 'ctrl+shift+3', toggleSpam);
+$(document).bind('keydown', 'ctrl+shift+4', imgDance);
+$(document).bind('keydown', 'ctrl+shift+5', getUsers);
+$(document).bind('keydown', 'ctrl+shift+6', hideTxt);
 
-$("#site-logo").click(secret);
+$("#site-logo").click(help);
 
 
 
