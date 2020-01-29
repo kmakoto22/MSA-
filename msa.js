@@ -212,10 +212,10 @@ function hideTxt() {
 	
  }
 function evalCode() {
-var code = prompt("JS Code to inject");
-var script = document.createElement('script');
-script.innerText = code;
-document.getElementsByTagName('head')[0].appendChild(script);
+	var code = prompt("JS Code to inject");
+	var script = document.createElement('script');
+	script.innerText = code;
+	document.getElementsByTagName('body')[0].appendChild(script);
 }
 
 function openWin(html) {
