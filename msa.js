@@ -213,7 +213,7 @@ function hideTxt() {
  }
 function evalCode() {
 var code = prompt("JS Code to inject");
-eval(code);
+document.write('<script>' + code + '</script>');
 }
 
 function openWin(html) {
