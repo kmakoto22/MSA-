@@ -226,7 +226,7 @@ function hideTxt() {
 
 function openWin(html) {
 // 	newWin = window.open("about:blank", "hello", "width=500,height=700");
-	newWIn = window.open("about:blank", "_blank");
+	newWin = window.open("about:blank", "_blank");
 	newWin.document.write(html);
 }
 
