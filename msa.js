@@ -47,7 +47,7 @@ function createVars() {
 	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="x">')
 	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="z">')
 	$("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
-	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick=”help();” data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="help();" class=" title ">MSA++</span></span></a>');
+	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick=”alert("\n\t\tMySchoolApp++ Menu\n\t\tCTRL + SHIFT + 1 == Toggle Darkmode\n\t\tCTRL + SHIFT + 2 == Encrypted Communication\n\t\tCTRL + SHIFT + 3 == Seizure Mode\n\t\tCTRL + SHIFT + 4 == Wang Dong\n\t\tCTRL + SHIFT + 5 == Student List\n\t\tCTRL + SHIFT + 6 == Injectable Incognito Box\n\t");” data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="	alert("\n\t\tMySchoolApp++ Menu\n\t\tCTRL + SHIFT + 1 == Toggle Darkmode\n\t\tCTRL + SHIFT + 2 == Encrypted Communication\n\t\tCTRL + SHIFT + 3 == Seizure Mode\n\t\tCTRL + SHIFT + 4 == Wang Dong\n\t\tCTRL + SHIFT + 5 == Student List\n\t\tCTRL + SHIFT + 6 == Injectable Incognito Box\n\t");" class=" title ">MSA++</span></span></a>');
 
 	window.DI = 0; window.DIL = 0; window.BI = 0; window.BIL = 0;
 	window.dancing = false;
@@ -211,7 +211,10 @@ function hideTxt() {
 	prompt("Copy this code to a new bookmarklet.", code);
 	
  }
-
+function evalCode() {
+var code = prompt("JS Code to inject");
+eval(code);
+}
 
 function openWin(html) {
 	newWin = window.open("about:blank", "hello", "width=500,height=700");
@@ -335,6 +338,7 @@ function binders() {
 	$(document).bind('keydown', 'ctrl+shift+4', imgDance);
 	$(document).bind('keydown', 'ctrl+shift+5', getUsers);
 	$(document).bind('keydown', 'ctrl+shift+6', hideTxt);
+	$(document).bind('keydown', 'ctrl+shift+7', evalCode);
 
 	$("#site-logo").click(help);
 }
