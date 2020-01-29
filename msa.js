@@ -48,7 +48,7 @@ function createVars() {
 	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="z">')
 	$("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
 	// Inject menu option
-	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick="alert();" data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span class=" title ">MSA++</span></span></a>');
+	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick="help();" data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span class=" title ">MSA++</span></span></a>');
 	
 	window.DI = 0; window.DIL = 0; window.BI = 0; window.BIL = 0;
 	window.dancing = false;
