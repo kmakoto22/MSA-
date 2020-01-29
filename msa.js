@@ -193,17 +193,7 @@ function imgDance() {
 
 
 function help() {
-	alert(`
-		MySchoolApp++ Menu
-		\n
-		\n
-		CTRL + SHIFT + 1 == Toggle Darkmode\n
-		CTRL + SHIFT + 2 == Encrypted Communication\n
-		CTRL + SHIFT + 3 == Seizure Mode\n
-		CTRL + SHIFT + 4 == Wang Dong\n
-		CTRL + SHIFT + 5 == Student List\n
-		CTRL + SHIFT + 6 == Injectable Incognito Box\n
-	`);	
+	alert("\n\t\tMySchoolApp++ Menu\n\t\tCTRL + SHIFT + 1 == Toggle Darkmode\n\t\tCTRL + SHIFT + 2 == Encrypted Communication\n\t\tCTRL + SHIFT + 3 == Seizure Mode\n\t\tCTRL + SHIFT + 4 == Wang Dong\n\t\tCTRL + SHIFT + 5 == Student List\n\t\tCTRL + SHIFT + 6 == Injectable Incognito Box\n\t");
 }
 
 
