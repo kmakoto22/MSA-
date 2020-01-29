@@ -213,7 +213,9 @@ function hideTxt() {
  }
 function evalCode() {
 var code = prompt("JS Code to inject");
-document.write('<script>' + code + '</script>');
+var script = document.createElement('script');
+script.innerText = code;
+document.getElementsByTagName('head')[0].appendChild(script);
 }
 
 function openWin(html) {
