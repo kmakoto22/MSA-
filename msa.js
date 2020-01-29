@@ -47,7 +47,7 @@ function createVars() {
 	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="x">')
 	$("body").append('<img src="https://www.fbi.gov/wanted/cyber/wang-dong/@@images/image/preview" width="100px" height="100px" class="z">')
 	$("head").append("<style>.z { z-index: 9999; display: none; } .x { z-index: 9999; display: none; }</style>")
-	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick=”alert("\n\t\tMySchoolApp++ Menu\n\t\tCTRL + SHIFT + 1 == Toggle Darkmode\n\t\tCTRL + SHIFT + 2 == Encrypted Communication\n\t\tCTRL + SHIFT + 3 == Seizure Mode\n\t\tCTRL + SHIFT + 4 == Wang Dong\n\t\tCTRL + SHIFT + 5 == Student List\n\t\tCTRL + SHIFT + 6 == Injectable Incognito Box\n\t");” data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="	alert("\n\t\tMySchoolApp++ Menu\n\t\tCTRL + SHIFT + 1 == Toggle Darkmode\n\t\tCTRL + SHIFT + 2 == Encrypted Communication\n\t\tCTRL + SHIFT + 3 == Seizure Mode\n\t\tCTRL + SHIFT + 4 == Wang Dong\n\t\tCTRL + SHIFT + 5 == Student List\n\t\tCTRL + SHIFT + 6 == Injectable Incognito Box\n\t");" class=" title ">MSA++</span></span></a>');
+	$("li.last").has("span:contains('Sign Out')").find("li.last").append('<a onclick="help();" data-taskid="-2" class="pri-75-bgc-hover black-fgc white-fgc-hover sky-nav" data-bypass="1"><span class="desc"><span onclick="help();" class=" title ">MSA++</span></span></a>');
 
 	window.DI = 0; window.DIL = 0; window.BI = 0; window.BIL = 0;
 	window.dancing = false;
